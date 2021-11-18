@@ -31,7 +31,7 @@ class MemeController extends Controller
             'author' => ['max:0'],
         ]);
         $imagePath = request('image')->store('uploads', 'public');
-        var_dump($imagePath);
+        dd($imagePath);
         $image = Image::make(public_path("storage/{$imagePath}"));
         $this->resizeImage($image);
         $image->save();
